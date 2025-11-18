@@ -331,7 +331,6 @@ app.get('/leaderboard', verifyAuth, requireAdmin, async (req, res) => {
   try {
     const snapshot = await db.collection('progress')
       .orderBy('level', 'desc')
-      .limit(20)
       .get();
     
     // Fetch usernames for each user

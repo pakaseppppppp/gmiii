@@ -1054,6 +1054,15 @@ class QuestStatus {
         score: xp,
         achievements: achievements.toList(),
         userPoints: userPoints,
+        quizzesCompleted: quizzesCompleted,
+        perfectQuizzes: perfectQuizzes,
+        completedMC: completedMC,
+        completedMM: completedMM,
+        playedAlphabet: playedAlphabet,
+        playedNumbers: playedNumbers,
+        playedColours: playedColours,
+        playedFruits: playedFruits,
+        feedbackSent: feedbackSent,
         claimedPoints: claimedPoints,
         levelGoalPoints: levelGoalPoints,
         chestsOpened: chestsOpened,
@@ -1142,6 +1151,15 @@ class QuestStatus {
     chestsOpened = data['chestsOpened'] ?? 0;
     streakDays = data['streakDays'] ?? 0;
     longestStreak = data['longestStreak'] ?? 0;
+    quizzesCompleted = data['quizzesCompleted'] ?? 0;
+    perfectQuizzes = data['perfectQuizzes'] ?? 0;
+    completedMC = data['completedMC'] ?? false;
+    completedMM = data['completedMM'] ?? false;
+    playedAlphabet = data['playedAlphabet'] ?? false;
+    playedNumbers = data['playedNumbers'] ?? false;
+    playedColours = data['playedColours'] ?? false;
+    playedFruits = data['playedFruits'] ?? false;
+    feedbackSent = data['feedbackSent'] ?? false;
 
     if (data['lastStreakUtc'] != null) {
       lastStreakUtc = DateTime.fromMillisecondsSinceEpoch(data['lastStreakUtc']);

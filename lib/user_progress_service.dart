@@ -19,6 +19,15 @@ class UserProgressService {
     required Map<String, dynamic> learningStates,
     required List<String> unlockedContent,
     required List<int?> level1Answers,
+    required int quizzesCompleted,
+    required int perfectQuizzes,
+    required bool completedMC,
+    required bool completedMM,
+    required bool playedAlphabet,
+    required bool playedNumbers,
+    required bool playedColours,
+    required bool playedFruits,
+    required bool feedbackSent,
   }) async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) throw Exception('No user logged in');
@@ -50,6 +59,15 @@ class UserProgressService {
       'learningStates': learningStates,
       'unlockedContent': unlockedContent,
       'level1Answers': level1Answers,
+      'quizzesCompleted': quizzesCompleted,
+      'perfectQuizzes': perfectQuizzes,
+      'completedMC': completedMC,
+      'completedMM': completedMM,
+      'playedAlphabet': playedAlphabet,
+      'playedNumbers': playedNumbers,
+      'playedColours': playedColours,
+      'playedFruits': playedFruits,
+      'feedbackSent': feedbackSent,
       'displayName':
           displayName, // Store displayName in progress for leaderboard
       'email': user.email, // Store email for username fallback
